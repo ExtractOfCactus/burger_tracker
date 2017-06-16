@@ -10,4 +10,18 @@ class Deal
     @day_id = options["day_id"].to_i
   end
 
+  def save()
+    sql = "INSERT INTO deals (
+      title,
+      price_mod,
+      day_id
+      ) VALUES (
+      '#{@title}',
+      #{@price_mod},
+      #{@day_id}
+      ) RETURNING *"
+    result = SqlRunner.run(sql)
+    @id = result.first()["id"].to_i
+  end
+
 end
