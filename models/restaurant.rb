@@ -14,4 +14,10 @@ class Restaurant
     @id = result.first()["id"].to_i
   end
 
+
+  def Restaurant.delete_all()
+    sql = "DELETE FROM restaurants"
+    SqlRunner.run(sql)
+  end
+
 end
