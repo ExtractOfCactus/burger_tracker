@@ -12,4 +12,10 @@ class Day
     @id = result.first()["id"].to_i
   end
 
+
+  def Day.delete_all()
+    sql = "DELETE FROM days"
+    SqlRunner.run(sql)
+  end
+
 end

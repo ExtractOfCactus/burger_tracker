@@ -1,0 +1,5 @@
+require_relative('../models/day')
+require_relative('../models/restaurant')
+require_relative('../models/burger')
+require_relative('../models/deal')
+require_relative('../models/burger_deal')

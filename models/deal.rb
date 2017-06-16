@@ -24,4 +24,9 @@ class Deal
     @id = result.first()["id"].to_i
   end
 
+  def Deal.delete_all()
+    sql = 'DELETE FROM deals'
+    SqlRunner.run(sql)
+  end
+
 end
