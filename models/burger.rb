@@ -10,5 +10,19 @@ class Burger
     @restaurant_id = options["restaurant_id"]
   end
 
+  def save()
+    sql = "INSERT INTO burgers (
+      name, 
+      price,
+      restaurant_id
+      ) VALUES (
+      '#{@name}',
+      #{@price},
+      #{@restaurant_id}
+      ) RETURNING *"
+    result = SqlRunner.run(sql)
+    @id = result.first()["id"].to_i
+  end
+
 
 end

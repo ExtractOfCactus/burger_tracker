@@ -9,4 +9,16 @@ class BurgerDeal
     @deal_id = options["deal_id"].to_i
   end
 
+  def save()
+    sql = "INSERT INTO burger_deals (
+      burger_id,
+      deal_id
+      ) VALUES (
+      #{@burger_id},
+      #{@deal_id}
+      ) RETURNING *"
+    result = SqlRunner.run(sql)
+    @id = result.first()["id"].to_i
+  end
+
 end
