@@ -20,7 +20,21 @@ CREATE TABLE burgers
 (
   id SERIAL4 PRIMARY KEY,
   name VARCHAR(255),
-  price FLOAT,
-  restaurant_id INT4
+  price FLOAT(2),
+  restaurant_id INT4 REFERENCES restaurants(id)
 );
 
+CREATE TABLE deals
+(
+  id SERIAL4 PRIMARY KEY,
+  title VARCHAR(255),
+  price_mod FLOAT(2),
+  day_id INT2 REFERENCES days(id)
+):
+
+CREATE TABLE burger_deals
+(
+  id SERIAL4 PRIMARY KEY,
+  deal_id INT4 REFERENCES deals(id),
+  burger_id INT4 REFERENCES burgers(id)
+);
