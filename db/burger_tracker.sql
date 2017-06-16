@@ -1,0 +1,26 @@
+DROP TABLE IF EXISTS burger_deals
+DROP TABLE IF EXISTS deals
+DROP TABLE IF EXISTS burgers
+DROP TABLE IF EXISTS restaurants
+DROP TABLE IF EXISTS days
+
+CREATE TABLE days 
+(
+  id SERIAL2 PRIMARY KEY,
+  day VARCHAR(255)
+);
+
+CREATE TABLE restaurants
+(
+  id SERIAL4 PRIMARY KEY,
+  name VARCHAR(255)
+);
+
+CREATE TABLE burgers
+(
+  id SERIAL4 PRIMARY KEY,
+  name VARCHAR(255),
+  price FLOAT,
+  restaurant_id INT4
+);
+
