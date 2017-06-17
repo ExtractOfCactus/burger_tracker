@@ -47,24 +47,18 @@ burger_2 = Burger.new({
 })
 
 burger_3 = Burger.new({
-  "name" => "Chicken Bungler",
-  "price" => 5.50,
-  "restaurant_id" => restaurant_1.id
-})
-
-burger_4 = Burger.new({
   "name" => "Sir Beefy",
   "price" => 5.20,
   "restaurant_id" => restaurant_2.id
 })
 
-burger_5 = Burger.new({
+burger_4 = Burger.new({
   "name" => "Sir Cheesy",
   "price" => 6,
   "restaurant_id" => restaurant_2.id
 })
 
-burger_6 = Burger.new({
+burger_5 = Burger.new({
   "name" => "Sir Clucksnomore",
   "price" => 6.20,
   "restaurant_id" => restaurant_2.id
@@ -76,3 +70,77 @@ burger_3.save()
 burger_4.save()
 burger_5.save()
 burger_6.save()
+
+
+deal_1 = Deal.new({
+  "title" => "Half price bunglers",
+  "price_mod" => 0.5,
+  "day_id" => wednesday.id
+})
+
+deal_2 = Deal.new({
+  "title" => "Royal Thursdays",
+  "price_mod" => 0.75,
+  "day_id" => thursday.id
+})
+
+deal_3 = Deal.new({
+  "title" => "Ye olde Wednesdays",
+  "price_mod" => 0.5,
+  "day_id" => wednesdays.id
+})
+
+deal_4 = Deal.new({
+  "title" => "Molten Mondays",
+  "price_mod" => 0.5,
+  "day_id" => monday.id
+})
+
+deal_1.save()
+deal_2.save()
+deal_3.save()
+deal_4.save()
+
+
+burger_deal_1 = BurgerDeal.new({
+  "deal_id" => deal_1.id,
+  "burger_id" => burger_1.id
+})
+
+burger_deal_2 = BurgerDeal.new({
+  "deal_id" => deal_1.id,
+  "burger_id" => burger_2.id
+})
+
+burger_deal_3 = BurgerDeal.new({
+  "deal_id" => deal_2.id,
+  "burger_id" => burger_3.id
+})
+
+burger_deal_4 = BurgerDeal.new({
+  "deal_id" => deal_2,
+  "burger_id" => burger_4
+})
+
+burger_deal_5 = BurgerDeal.new({
+  "deal_id" => deal_2.id,
+  "burger_id" => burger_5.id
+})
+
+burger_deal_6 = BurgerDeal.new({
+  "deal_id" => deal_3.id,
+  "burger_id" => burger_5.id
+})
+
+burger_deal_7 = BurgerDeal.new({
+  "deal_id" => deal_4.id,
+  "burger_id" => burger_2.id
+})
+
+burger_deal_1.save()
+burger_deal_2.save()
+burger_deal_3.save()
+burger_deal_4.save()
+burger_deal_5.save()
+burger_deal_6.save()
+burger_deal_7.save()
