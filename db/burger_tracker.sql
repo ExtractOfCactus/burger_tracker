@@ -1,8 +1,8 @@
-DROP TABLE IF EXISTS burger_deals
-DROP TABLE IF EXISTS deals
-DROP TABLE IF EXISTS burgers
-DROP TABLE IF EXISTS restaurants
-DROP TABLE IF EXISTS days
+DROP TABLE IF EXISTS burger_deals;
+DROP TABLE IF EXISTS deals;
+DROP TABLE IF EXISTS burgers;
+DROP TABLE IF EXISTS restaurants;
+DROP TABLE IF EXISTS days;
 
 CREATE TABLE days 
 (
@@ -30,7 +30,7 @@ CREATE TABLE deals
   title VARCHAR(255),
   price_mod FLOAT(2),
   day_id INT2 REFERENCES days(id)
-):
+);
 
 CREATE TABLE burger_deals
 (

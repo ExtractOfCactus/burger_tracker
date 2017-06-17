@@ -7,7 +7,7 @@ class Day
   end
 
   def save()
-    sql = "INSERT INTO days (name) VALUES ('#{@name}') RETURNING *"
+    sql = "INSERT INTO days (day) VALUES ('#{@day}') RETURNING *"
     result = SqlRunner.run(sql)
     @id = result.first()["id"].to_i
   end

@@ -9,7 +9,7 @@ class Restaurant
   end
 
   def save()
-    sql = "INSERT INTO restaurants (name) VALUES ('#{@name}' RETURNING *"
+    sql = "INSERT INTO restaurants (name) VALUES ('#{@name}') RETURNING *"
     result = SqlRunner.run(sql)
     @id = result.first()["id"].to_i
   end

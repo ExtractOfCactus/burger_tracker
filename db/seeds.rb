@@ -10,13 +10,13 @@ Burger.delete_all()
 Restaurant.delete_all()
 Day.delete_all()
 
-monday = Day.new({ "name" => "Monday"})
-tuesady = Day.new({ "name" => "Tuesday"})
-wednesday = Day.new({ "name" => "Wednesday"})
-thursday = Day.new({ "name" => "Thursday"})
-friday = Day.new({ "name" => "Friday"})
-saturday = Day.new({ "name" => "Saturday"})
-sunday = Day.new({ "name" => "Sunday"})
+monday = Day.new({ "day" => "Monday"})
+tuesady = Day.new({ "day" => "Tuesday"})
+wednesday = Day.new({ "day" => "Wednesday"})
+thursday = Day.new({ "day" => "Thursday"})
+friday = Day.new({ "day" => "Friday"})
+saturday = Day.new({ "day" => "Saturday"})
+sunday = Day.new({ "day" => "Sunday"})
 
 monday.save()
 tuesady.save()
@@ -27,7 +27,7 @@ saturday .save()
 sunday.save()
 
 
-restaurant_1 = Restaurant.new({ "name" => "O'Donals"})
+restaurant_1 = Restaurant.new({ "name" => "Odonals"})
 restaurant_2 = Restaurant.new({ "name" => "Burger MacQueen"})
 
 restaurant_1.save()
@@ -69,7 +69,6 @@ burger_2.save()
 burger_3.save()
 burger_4.save()
 burger_5.save()
-burger_6.save()
 
 
 deal_1 = Deal.new({
@@ -87,7 +86,7 @@ deal_2 = Deal.new({
 deal_3 = Deal.new({
   "title" => "Ye olde Wednesdays",
   "price_mod" => 0.5,
-  "day_id" => wednesdays.id
+  "day_id" => wednesday.id
 })
 
 deal_4 = Deal.new({
@@ -118,8 +117,8 @@ burger_deal_3 = BurgerDeal.new({
 })
 
 burger_deal_4 = BurgerDeal.new({
-  "deal_id" => deal_2,
-  "burger_id" => burger_4
+  "deal_id" => deal_2.id,
+  "burger_id" => burger_4.id
 })
 
 burger_deal_5 = BurgerDeal.new({

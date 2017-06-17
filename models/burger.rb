@@ -5,7 +5,7 @@ class Burger
 
   def initialize(options)
     @id = options["id"].to_i if options["id"]
-    @name = options["id"]
+    @name = options["name"]
     @price = options["price"].to_f
     @restaurant_id = options["restaurant_id"]
   end
