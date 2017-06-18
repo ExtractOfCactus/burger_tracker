@@ -1,6 +1,7 @@
 require('minitest/autorun')
 require('minitest/rg')
 require_relative('../models/burger')
+require_relative('../models/restaurant')
 
 class TestBurger < MiniTest::Test
 
@@ -30,7 +31,7 @@ class TestBurger < MiniTest::Test
   end
 
   def test_burger_has_name
-
+    assert_equal("Hambungler", @burger_1.name)
   end
 
 end
