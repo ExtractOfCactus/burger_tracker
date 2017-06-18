@@ -15,6 +15,13 @@ class Restaurant
   end
 
 
+  def Restaurant.all()
+    sql = "SELECT * FROM restaurants"
+    restaurants_data = SqlRunner.run(sql)
+    result = restaurants_data.each { |restaurant| Restaurant.new(restaurant) }
+    return result
+  end
+
   def Restaurant.delete_all()
     sql = "DELETE FROM restaurants"
     SqlRunner.run(sql)
