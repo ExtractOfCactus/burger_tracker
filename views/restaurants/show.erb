@@ -1,9 +1,16 @@
 <h3><%= @restaurant.name %></h3>
 
+<h4>Burgers</h4>
 <ul>
   <% @restaurant.burgers().each() do |burger| %>
-  <li><a href="<%= burger.id %>"><%= burger.name %></a></li>
+  <li><a href="<%= burger.id %>"><%= burger.name() %></a></li>
   <% end %>
+</ul>
+
+<h4>Burgers</h4>
+<ul>
+  <% @restaurants.deals().each() do |deal| %>
+  <li><a href="<%= deal.id %>"><%= deal.title() %></a></li>
 </ul>
 
 <p><a href="burgers/new">Add a burger to this restaurant</a></p>

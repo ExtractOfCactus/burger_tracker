@@ -22,6 +22,18 @@ class Restaurant
     return result
   end
 
+  def deals()
+    sql = "SELECT DISTINCT deals.* FROM deals
+      INNER JOIN burger_deals
+      ON deals.id = burger_deals.deal_id
+      INNER JOIN burgers
+      ON burger_deals.burger_id = burgers.id
+      WHERE burgers.restaurant_id = #{@id}"
+    deals_hashes = SqlRunner.run(sql)
+    result = deals_hashes.map {|deal_hash| Deal.new(deal_hash)}
+    return result
+  end
+
 
   def Restaurant.all()
     sql = "SELECT * FROM restaurants"

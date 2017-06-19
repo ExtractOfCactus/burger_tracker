@@ -3,6 +3,7 @@ require( 'sinatra/contrib/all' )
 require( 'pry-byebug' )
 require_relative('../models/restaurant')
 require_relative('../models/burger')
+require_relative('../models/deal')
 
 get '/restaurants/index' do
   @restaurants = Restaurant.all()
@@ -23,6 +24,8 @@ post '/restaurants/index' do
   restaurant.save()
   redirect to ('/restaurants/index')
 end
+
+
 
 
 
