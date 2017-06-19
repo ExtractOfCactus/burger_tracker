@@ -3,6 +3,8 @@ require_relative('../models/restaurant')
 require_relative('../models/burger')
 require_relative('../models/deal')
 require_relative('../models/burger_deal')
+require('pry')
+require('pry-byebug')
 
 BurgerDeal.delete_all()
 Deal.delete_all()
@@ -143,3 +145,6 @@ burger_deal_4.save()
 burger_deal_5.save()
 burger_deal_6.save()
 burger_deal_7.save()
+
+binding.pry
+nil

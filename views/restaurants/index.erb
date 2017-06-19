@@ -1,7 +1,14 @@
+
+
 <h2> Restaurants</h2>
 
 <% @restaurants.each() do |restaurant| %>
-<p><%= restaurant.name() %></p>
+<p><a href="/restaurants/<%=restaurant.id()%>"><%= restaurant.name() %></a></p>
+  <ul>
+    <% restaurant.burgers().each() do |burger| %>
+    <li><%= burger.name %></li>
+    <% end %>
+  </ul>
 <% end %>
 
 <p><a href="/restaurants/new">Create a new Restaurant!</a></p>

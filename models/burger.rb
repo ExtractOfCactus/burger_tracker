@@ -24,6 +24,14 @@ class Burger
     @id = result.first()["id"].to_i
   end
 
+
+  def Burger.all()
+    sql = "SELECT * FROM burgers"
+    burgers_data = SqlRunner.run(sql)
+    result = burgers_data.map {|burger| Burger.new(burger)}
+    return result
+  end
+
   def Burger.delete_all()
     sql = "DELETE FROM burgers"
     SqlRunner.run(sql)
