@@ -18,7 +18,7 @@ class Restaurant
   def Restaurant.all()
     sql = "SELECT * FROM restaurants"
     restaurants_data = SqlRunner.run(sql)
-    result = restaurants_data.each { |restaurant| Restaurant.new(restaurant) }
+    result = restaurants_data.map { |restaurant| Restaurant.new(restaurant) }
     return result
   end
 
