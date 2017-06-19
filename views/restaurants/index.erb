@@ -3,10 +3,18 @@
 <h2> Restaurants</h2>
 
 <% @restaurants.each() do |restaurant| %>
-<p><a href="/restaurants/<%=restaurant.id()%>"><%= restaurant.name() %></a></p>
+<h3><a href="/restaurants/<%=restaurant.id()%>"><%= restaurant.name() %></a></h3>
+  <h4>Burgers</h4>
   <ul>
     <% restaurant.burgers().each() do |burger| %>
-    <li><%= burger.name %></li>
+    <li><%= burger.name() %></li>
+    <% end %>
+  </ul>
+
+  <h4>Deals</h4>
+  <ul>
+    <% restaurant.deals().each() do |deal| %>
+    <li><%= deal.title() %></li>
     <% end %>
   </ul>
 <% end %>
