@@ -1,3 +1,13 @@
 <h3>A tracker for burgers.</h3>
 
-<p>Today is <%= @weekday %></p>
+<p>Today is <%= @weekday.day() %></p>
+<% unless @weekday.deals() == [] %>
+<p>Here are your deals for today:</p>
+<ul>
+  <% @weekday.deals().each() do |deal| %>
+  <li><%= deal.title() %> at <%= deal.restaurant().name() %></li>
+  <% end %>
+</ul>
+<% else %> 
+<p>No deals today!</p>
+<% end %>

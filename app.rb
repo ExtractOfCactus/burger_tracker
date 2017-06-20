@@ -5,7 +5,6 @@ require_relative('controllers/deals_controller')
 require_relative('models/day')
 
 get '/' do
-  time = Time.new()
   @weekday = Day.which_day?()
   erb(:index)
 end

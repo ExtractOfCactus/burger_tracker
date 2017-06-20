@@ -13,7 +13,7 @@ Restaurant.delete_all()
 Day.delete_all()
 
 monday = Day.new({ "day" => "Monday"})
-tuesady = Day.new({ "day" => "Tuesday"})
+tuesday = Day.new({ "day" => "Tuesday"})
 wednesday = Day.new({ "day" => "Wednesday"})
 thursday = Day.new({ "day" => "Thursday"})
 friday = Day.new({ "day" => "Friday"})
@@ -21,7 +21,7 @@ saturday = Day.new({ "day" => "Saturday"})
 sunday = Day.new({ "day" => "Sunday"})
 
 monday.save()
-tuesady.save()
+tuesday.save()
 wednesday.save()
 thursday.save()
 friday.save()
@@ -92,9 +92,9 @@ deal_3 = Deal.new({
 })
 
 deal_4 = Deal.new({
-  "title" => "Molten Mondays",
+  "title" => "Molten Tuesdays",
   "price_mod" => 0.5,
-  "day_id" => monday.id
+  "day_id" => tuesday.id
 })
 
 deal_1.save()

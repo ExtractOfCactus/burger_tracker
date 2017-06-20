@@ -1,0 +1,23 @@
+<h2>Enter a new Deal</h2>
+
+<form method="post" action="">
+  
+  <label for="deal-title">New Deal Name: </label>
+  <input id="deal-title" type="text" name="title">
+
+  <label for="deal-day">Day of Deal: </label>
+  <select id="deal-day" name="day_id">
+  <% @days.each() do |day| %>
+    <option value=<%= day.id() %>><%= day.day() %></option>
+    <% end %>
+  </select>
+
+  <label for="burger-select">Burgers: </label>
+  <% @burgers.each do |burger| %>
+  <input type="checkbox" name="burger" value=<%= burger.id %>><%= burger.name %>
+  <% end %>
+ 
+
+  <input type="submit" name="Create Deal">
+
+</form>
