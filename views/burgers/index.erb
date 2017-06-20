@@ -3,16 +3,8 @@
 <hr>
 
 <% @burgers.each() do |burger| %>
-  <h3><%= burger.name() %></h3>
-  <p>Restaurant: <%= burger.restaurant().name()%></p>
-  <p>Deals: </p>
-  <ul>
-  <% burger.deals().each do |deal| %>
-    <li><%= deal.title() %><% deal.days().each do |day| %> - Available on <%= day.day() %><% end %></li>
-    <% end %>
-    <a href="/deals/new">Add a deal</a>
-  </ul>
+  <h3><a href="/burgers/<%=burger.id()%>"><%= burger.name() %></a></h3>
   <hr>
-<% end %>
-
+ <% end %>
+ <hr>
 <p><a href="/burgers/new">Add a new burger!</a></p>

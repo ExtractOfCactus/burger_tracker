@@ -6,30 +6,6 @@
 
 <% @restaurants.each() do |restaurant| %>
 <h3><a href="/restaurants/<%=restaurant.id%>"><%= restaurant.name() %></a></h3>
-  <h4>Burgers</h4>
-  <ul>
-    <% restaurant.burgers().each() do |burger| %>
-    <li><%= burger.name() %></li>
-    <% end %>
-    <a href="/burgers/new">Add a burger</a>
-  </ul>
-
-
-  <h4>Deals</h4>
-  <ul>
-    <% restaurant.deals().each() do |deal| %>
-    <li><%= deal.title() %><% deal.days().each do |day| %> - Available on <%= day.day() %><% end %></li>
-    
-    <p></p>
-
-      <ul>
-        <% deal.burgers().each() do |burger| %>
-        <li><%= burger.name() %></li>
-        <% end %>
-      </ul>
-      <p></p>
-    <% end %>
-  </ul>
   <hr>
 <% end %>
 
