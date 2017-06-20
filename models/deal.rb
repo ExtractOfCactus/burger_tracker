@@ -42,6 +42,18 @@ class Deal
      return result
   end
 
+  def restaurant()
+    sql = "SELECT restaurants.* FROM restaurants
+      INNER JOIN burgers
+      ON restaurants.id = burgers.restaurant_id
+      INNER JOIN burger_deals
+      ON burgers.id = burger_deals.burger_id
+      WHERE burger_deals.deal_id = #{@id}"
+    restaurant_hash = SqlRunner.run(sql).first()
+    result = Restaurant.new(restaurant_hash)
+    return result
+  end
+
 
   def Deal.all()
     sql = "SELECT * FROM deals"
