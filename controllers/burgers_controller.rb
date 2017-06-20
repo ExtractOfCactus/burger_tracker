@@ -10,3 +10,9 @@ get '/burgers/new' do
   @restaurants = Restaurant.all()
 erb(:"burgers/new")
 end
+
+post '/burgers/' do
+  burger = Burger.new(params)
+  burger.save()
+  redirect to('/burgers/')
+end

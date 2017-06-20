@@ -18,11 +18,11 @@ get '/deals/new' do
   erb(:"deals/new")
 end
 
-post'/deals/:id' do
+post'/deals/' do
   deal = Deal.new(params)
   deal.save()
   params['deal_id'] = deal.id
   burger_deal = BurgerDeal.new(params)
   burger_deal.save()  
-  erb(:"deals/show")
+  redirect to('/burgers/')
 end
