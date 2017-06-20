@@ -5,9 +5,10 @@
 <p>Here are your deals for today:</p>
 <ul>
   <% @weekday.deals().each() do |deal| %>
-  <li><%= deal.title() %> at <%= deal.restaurant().name() %></li>
+  <li><a href="deals/<%=deal.id%>"><%= deal.title() %></a> at <a href="restaurants/<%=deal.restaurant().id()%>"><%= deal.restaurant().name() %></a></li>
   <% end %>
 </ul>
 <% else %> 
 <p>No deals today!</p>
 <% end %>
+<hr>
