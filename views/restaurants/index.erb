@@ -15,7 +15,16 @@
   <h4><a href="/deals/<%=restaurant.id%>">Deals</a></h4>
   <ul>
     <% restaurant.deals().each() do |deal| %>
-    <li><%= deal.title() %></li>
+    <li><%= deal.title() %><% deal.days().each do |day| %> - Available on <%= day.day() %><% end %></li>
+    
+    <p></p>
+
+      <ul>
+        <% deal.burgers().each() do |burger| %>
+        <li><%= burger.name() %></li>
+        <% end %>
+      </ul>
+      <p></p>
     <% end %>
   </ul>
   <hr>
