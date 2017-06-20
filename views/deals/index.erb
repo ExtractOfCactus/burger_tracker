@@ -1,0 +1,8 @@
+<h2>Deals</h2>
+
+<% @deals.each do |deal| %>
+  <h3><%= deal.title() %></h3>
+  <% deal.day().each() do |day| %>
+  <p>Day of deal: <%= day.day() %></p>
+  <% end %>
+<% end %>

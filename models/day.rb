@@ -13,6 +13,13 @@ class Day
   end
 
 
+  def Day.all()
+    sql = "SELECT * FROM days"
+    days_hashes = SqlRunner.run(sql)
+    result = days_hashes.map {|day_hash| Day.new(day_hash)}
+    return result
+  end
+
   def Day.delete_all()
     sql = "DELETE FROM days"
     SqlRunner.run(sql)
