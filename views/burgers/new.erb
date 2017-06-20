@@ -1,0 +1,17 @@
+<h2>Add a burger</h2>
+
+<form method="post" action="/burgers/">
+
+  <label for="burger-name">Burger Name: </label>
+  <input id="burger-name" type="text" name="name">
+
+  <label for="restaurant-name">Restaurant: </label>
+  <select id="restaurant-name" name="restaurant_id">
+    <% @restaurants.each() do |restaurant| %>
+    <option value=<%= restaurant.id() %>><%= restaurant.name() %></option>
+    <% end %>
+  </select>
+
+  <input type="submit" name="Create burger">
+
+</form>
