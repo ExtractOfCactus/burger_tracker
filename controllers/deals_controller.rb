@@ -19,15 +19,10 @@ get '/deals/new' do
 end
 
 post'/deals/:id' do
-  burger_deal = BurgerDeal.new(params['burger_id'], params['id'])
-  burger_deal.save()
-  deal = Deal.new(params['id'], params[])
+  deal = Deal.new(params)#([params['id'], params['title'], params['day_id']])
+  deal.save()
+  params['deal_id'] = deal.id
+  burger_deal = BurgerDeal.new(params)#([params['burger_id'].to_i, params['id'].to_i])
+  burger_deal.save()  
   erb(:"deals/show")
 end
-
-
-
-# get 'deals/:id' do
-
-#   erb(:"deals/show")
-# end

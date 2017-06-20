@@ -14,7 +14,7 @@
 
   <label for="burger-select">Burgers: </label>
   <% @burgers.each do |burger| %>
-  <input type="checkbox" name="burger" value=<%= burger.id %>><%= burger.name %>
+  <input type="radio" name="burger_id" value=<%= burger.id %>><%= burger.name %>
   <% end %>
  
 

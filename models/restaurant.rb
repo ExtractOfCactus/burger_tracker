@@ -1,5 +1,6 @@
 require_relative('../db/sql_runner')
 require_relative('burger')
+require('pry-byebug')
 
 class Restaurant
   attr_reader :id, :name
