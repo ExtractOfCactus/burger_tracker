@@ -38,31 +38,31 @@ restaurant_2.save()
 
 burger_1 = Burger.new({
   "name" => "Hambungler",
-  "price" => 4.50,
+  # "price" => 4.50,
   "restaurant_id" => restaurant_1.id
 })
 
 burger_2 = Burger.new({
   "name" => "Cheesibungler",
-  "price" => 5,
+  # "price" => 5,
   "restaurant_id" => restaurant_1.id
 })
 
 burger_3 = Burger.new({
   "name" => "Sir Beefy",
-  "price" => 5.20,
+  # "price" => 5.20,
   "restaurant_id" => restaurant_2.id
 })
 
 burger_4 = Burger.new({
   "name" => "Sir Cheesy",
-  "price" => 6,
+  # "price" => 6,
   "restaurant_id" => restaurant_2.id
 })
 
 burger_5 = Burger.new({
   "name" => "Sir Clucksnomore",
-  "price" => 6.20,
+  # "price" => 6.20,
   "restaurant_id" => restaurant_2.id
   })
 
@@ -75,25 +75,25 @@ burger_5.save()
 
 deal_1 = Deal.new({
   "title" => "Half price bunglers",
-  "price_mod" => 0.5,
+  # "price_mod" => 0.5,
   "day_id" => wednesday.id
 })
 
 deal_2 = Deal.new({
   "title" => "Royal Thursdays",
-  "price_mod" => 0.75,
+  # "price_mod" => 0.75,
   "day_id" => thursday.id
 })
 
 deal_3 = Deal.new({
   "title" => "Ye olde Wednesdays",
-  "price_mod" => 0.5,
+  # "price_mod" => 0.5,
   "day_id" => wednesday.id
 })
 
 deal_4 = Deal.new({
   "title" => "Molten Tuesdays",
-  "price_mod" => 0.5,
+  # "price_mod" => 0.5,
   "day_id" => tuesday.id
 })
 

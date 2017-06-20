@@ -20,7 +20,6 @@ CREATE TABLE burgers
 (
   id SERIAL4 PRIMARY KEY,
   name VARCHAR(255),
-  price FLOAT(2),
   restaurant_id INT4 REFERENCES restaurants(id)
 );
 
@@ -28,7 +27,6 @@ CREATE TABLE deals
 (
   id SERIAL4 PRIMARY KEY,
   title VARCHAR(255),
-  price_mod FLOAT(2),
   day_id INT2 REFERENCES days(id)
 );
 

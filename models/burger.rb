@@ -1,23 +1,20 @@
 require_relative('../db/sql_runner')
 
 class Burger
-  attr_reader :id, :name, :price, :restaurant_id
+  attr_reader :id, :name, :restaurant_id
 
   def initialize(options)
     @id = options["id"].to_i if options["id"]
     @name = options["name"]
-    @price = options["price"].to_f
     @restaurant_id = options["restaurant_id"]
   end
 
   def save()
     sql = "INSERT INTO burgers (
       name, 
-      price,
       restaurant_id
       ) VALUES (
       '#{@name}',
-      #{@price},
       #{@restaurant_id}
       ) RETURNING *"
     result = SqlRunner.run(sql)

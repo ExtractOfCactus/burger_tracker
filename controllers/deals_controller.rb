@@ -21,6 +21,7 @@ end
 post'/deals/:id' do
   burger_deal = BurgerDeal.new(params['burger_id'], params['id'])
   burger_deal.save()
+  deal = Deal.new(params['id'], params[])
   erb(:"deals/show")
 end
 
