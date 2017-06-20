@@ -1,0 +1,14 @@
+<h2>Deals by day</h2>
+<hr>
+
+<% @days.each() do |day| %>
+<h3><%= day.day() %></h3>
+  <p>Deals: 
+    <ul>
+    <% day.deals().each() do |deal| %>
+      <li><%= deal.title() %> at <%= deal.restaurant().name() %></li>
+      <% end %>
+    </ul>
+    </p>
+<hr>
+<% end %>

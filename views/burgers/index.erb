@@ -10,6 +10,7 @@
   <% burger.deals().each do |deal| %>
     <li><%= deal.title() %><% deal.days().each do |day| %> - Available on <%= day.day() %><% end %></li>
     <% end %>
+    <a href="/deals/new">Add a deal</a>
   </ul>
   <hr>
 <% end %>
