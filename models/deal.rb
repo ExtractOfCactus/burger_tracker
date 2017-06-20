@@ -25,11 +25,21 @@ class Deal
     @id = result.first()["id"].to_i
   end
 
-  def day()
+  def days()
     sql = "SELECT * FROM days WHERE id = #{@day_id}"
     day_hashes = SqlRunner.run(sql)
     result = day_hashes.map {|day_hash| Day.new(day_hash)}
     return result
+  end
+
+  def burgers()
+    sql = "SELECT burgers.* FROM burgers
+      INNER JOIN burger_deals
+      ON burgers.id = burger_deals.burger_id
+      WHERE burger_deals.deal_id = #{@id}"
+     burger_hashes = SqlRunner.run(sql) 
+     result = burger_hashes.map {|burger_hash| Burger.new(burger_hash)}
+     return result
   end
 
 

@@ -2,7 +2,14 @@
 
 <% @deals.each do |deal| %>
   <h3><%= deal.title() %></h3>
-  <% deal.day().each() do |day| %>
+  <% deal.days().each() do |day| %>
   <p>Day of deal: <%= day.day() %></p>
+  <p>Applicable to:</p>
+    <ul>
+      <% deal.burgers().each() do |burger| %>
+      <li><%= burger.name() %></li>
+      <% end %>
+    </ul>
   <% end %>
+  <hr>
 <% end %>
