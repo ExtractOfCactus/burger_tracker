@@ -3,18 +3,7 @@
 <hr>
 
 <% @deals.each do |deal| %>
-  <h3><%= deal.title() %></h3>
-  <p>Restaurant: <%= deal.restaurant().name() %></p>
-  <% deal.days().each() do |day| %>
-  <p>Day of deal: <%= day.day() %></p>
-  <p>Applicable to:
-    <ul>
-      <% deal.burgers().each() do |burger| %>
-      <li><%= burger.name() %></li>
-      <% end %>
-    </ul>
-  <% end %>
-
+  <h3><a href="/deals/<%= deal.id() %>"><%= deal.title() %></a></h3>
   <hr>
 <% end %>
 
