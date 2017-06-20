@@ -5,7 +5,7 @@
 <p>Applicable to:
   <ul>
     <% @deal.burgers().each() do |burger| %>
-    <li><%= burger.name() %></li>
+    <li><a href="../burgers/<%=burger.id()%>"><%= burger.name() %></a></li>
     <% end %>
   </ul>
 <% end %>
