@@ -60,6 +60,13 @@ class Deal
     return result
   end
 
+  def Deal.find(id)
+    sql = "SELECT * FROM deals WHERE id = #{id}"
+    deal_hashes = SqlRunner.run(sql)
+    result = deal_hashes.map {|deal_hash| Deal.new(deal_hash)}
+    return result.first()
+  end
+
   def Deal.delete_all()
     sql = 'DELETE FROM deals'
     deal_hashes = SqlRunner.run(sql)

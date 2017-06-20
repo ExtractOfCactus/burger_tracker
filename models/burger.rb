@@ -48,6 +48,13 @@ class Burger
     return result
   end
 
+  def Burger.find(id)
+    sql = "SELECT * FROM burgers WHERE id = #{id}"
+    burgers_data = SqlRunner.run(sql)
+    result = burgers_data.map {|burger| Burger.new(burger)}
+    return result.first()
+  end
+
   def Burger.delete_all()
     sql = "DELETE FROM burgers"
     SqlRunner.run(sql)

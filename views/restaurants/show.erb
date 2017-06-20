@@ -3,14 +3,22 @@
 <h4>Burgers</h4>
 <ul>
   <% @restaurant.burgers().each() do |burger| %>
-  <li><a href="<%= burger.id %>"><%= burger.name() %></a></li>
+  <li><a href="../burgers/<%=burger.id%>"><%= burger.name() %></a></li>
   <% end %>
 </ul>
 
-<h4>Burgers</h4>
-<ul>
-  <% @restaurants.deals().each() do |deal| %>
-  <li><a href="<%= deal.id %>"><%= deal.title() %></a></li>
-</ul>
+<h4>Deals</h4>
+  <ul>
+    <% @restaurant.deals().each() do |deal| %>
+    <li><a href="../deals/<%= deal.id %>"><%= deal.title() %></a><% deal.days().each do |day| %> - Available on <%= day.day() %><% end %></li>
+    
+    <p></p>
 
-<p><a href="burgers/new">Add a burger to this restaurant</a></p>
+      <ul>
+        <% deal.burgers().each() do |burger| %>
+        <li><%= burger.name() %></li>
+        <% end %>
+      </ul>
+      <p></p>
+    <% end %>
+  </ul>
