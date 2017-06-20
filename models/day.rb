@@ -25,4 +25,17 @@ class Day
     SqlRunner.run(sql)
   end
 
+  def Day.which_day?()
+    time = Time.new()
+    weekday_num = time.wday()
+    if weekday_num != 0
+      sql = "SELECT * FROM days WHERE id = #{weekday_num}"
+      day_hashes = SqlRunner.run(sql)
+      day = (day_hashes.map{|day_hash| Day.new(day_hash)}).first()
+      return day.day()
+    else
+      return "Sunday"
+    end
+  end
+
 end

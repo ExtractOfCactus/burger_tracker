@@ -146,7 +146,5 @@ burger_deal_5.save()
 burger_deal_6.save()
 burger_deal_7.save()
 
-thing = deal_1.day()
-
 binding.pry
 nil
