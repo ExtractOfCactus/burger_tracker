@@ -1,12 +1,10 @@
 <h2>Deals</h2>
 <p><a href="/deals/new">Add a new deal</a></p>
-<hr>
 
 <% @deals.each do |deal| %>
 <section>
 <h3><a href="/deals/<%= deal.id() %>"><%= deal.title() %></a></h3>
 </section>
-<hr>
 <% end %>
 
 <p><a href="/deals/new">Add a new deal</a></p>

@@ -73,11 +73,15 @@ li {
 
 section {
   background: white;
-  margin-left: 25%;
+  margin: 1% 0 1% 25%;
   width: 50%;
-  height: 50%;
   border:dashed brown;
   border-radius: 6px;
+}
+
+section a {
+  display: block;
+  /*padding: 50%;*/
 }
 
 footer {
