@@ -1,14 +1,18 @@
 <h2>Deals by day</h2>
 
 <% @days.each() do |day| %>
-<section>
+<section id="day-view">
 <h3><%= day.day() %></h3>
-<p>Deals: 
+  <% unless day.deals() == [] %>
   <ul>
     <% day.deals().each() do |deal| %>
-    <li><a href="../deals/<%=deal.id()%>"><%= deal.title() %></a> at <a href="../restaurants/<%=deal.restaurant().id()%>"><%= deal.restaurant().name() %></a></li>
+    <div id="day-deal">
+      <li><a href="../deals/<%=deal.id()%>"><%= deal.title() %></a> at <a href="../restaurants/<%=deal.restaurant().id()%>"><%= deal.restaurant().name() %></a></li>
+    </div>
     <% end %>
   </ul>
-</p>
+  <% else %>
+  <p>Sorry, no deals today</p>
+  <% end %>
 </section>
 <% end %>

@@ -1,12 +1,14 @@
 <h2>Daily Deals</h2>
 
-<section id="daily-deal">
+<section id="day-view">
   <p>Today is <%= @weekday.day() %></p>
   <% unless @weekday.deals() == [] %>
   <p>Here are your deals for today:</p>
   <ul>
     <% @weekday.deals().each() do |deal| %>
-    <li><a href="deals/<%=deal.id%>"><%= deal.title() %></a> at <a href="restaurants/<%=deal.restaurant().id()%>"><%= deal.restaurant().name() %></a></li>
+    <div id="day-deal">
+      <li><a href="deals/<%=deal.id%>"><%= deal.title() %></a> at <a href="restaurants/<%=deal.restaurant().id()%>"><%= deal.restaurant().name() %></a></li>
+    </div>
     <% end %>
   </ul>
   <% else %> 

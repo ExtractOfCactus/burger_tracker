@@ -1,10 +1,14 @@
 <h2>Burgers</h2>
-<p><a href="/burgers/new">Add a new burger!</a></p>
-
+<div class="create">
+  <p><a href="/burgers/new">Add a new burger!</a></p>
+</div>
 
 <% @burgers.each() do |burger| %>
 <section>
 <h3><a href="/burgers/<%=burger.id()%>"><%= burger.name() %></a></h3>
 </section>
 <% end %>
-<p><a href="/burgers/new">Add a new burger!</a></p>
+
+<div class="create">
+  <p><a href="/burgers/new">Add a new burger!</a></p>
+</div>
