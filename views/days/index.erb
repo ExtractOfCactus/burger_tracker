@@ -2,6 +2,7 @@
 <hr>
 
 <% @days.each() do |day| %>
+<section>
 <h3><%= day.day() %></h3>
 <p>Deals: 
   <ul>
@@ -10,5 +11,6 @@
     <% end %>
   </ul>
 </p>
+</section>
 <hr>
 <% end %>

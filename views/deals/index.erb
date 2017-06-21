@@ -3,7 +3,9 @@
 <hr>
 
 <% @deals.each do |deal| %>
+<section>
 <h3><a href="/deals/<%= deal.id() %>"><%= deal.title() %></a></h3>
+</section>
 <hr>
 <% end %>
 
