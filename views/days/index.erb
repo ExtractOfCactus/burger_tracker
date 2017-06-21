@@ -3,12 +3,12 @@
 
 <% @days.each() do |day| %>
 <h3><%= day.day() %></h3>
-  <p>Deals: 
-    <ul>
+<p>Deals: 
+  <ul>
     <% day.deals().each() do |deal| %>
-      <li><a href="../deals/<%=deal.id()%>"><%= deal.title() %></a> at <a href="../restaurants/<%=deal.restaurant().id()%>"><%= deal.restaurant().name() %></a></li>
-      <% end %>
-    </ul>
-    </p>
+    <li><a href="../deals/<%=deal.id()%>"><%= deal.title() %></a> at <a href="../restaurants/<%=deal.restaurant().id()%>"><%= deal.restaurant().name() %></a></li>
+    <% end %>
+  </ul>
+</p>
 <hr>
 <% end %>

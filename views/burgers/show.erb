@@ -2,7 +2,7 @@
   <p>Restaurant: <a href="../restaurants/<%= @burger.restaurant().id() %>"><%= @burger.restaurant().name()%></a></p>
   <p>Deals: </p>
   <ul>
-  <% @burger.deals().each do |deal| %>
+    <% @burger.deals().each do |deal| %>
     <li><a href="../deals/<%= deal.id() %>"><%= deal.title() %></a><% deal.days().each do |day| %> - Available on <%= day.day() %><% end %></li>
     <% end %>
   </ul>

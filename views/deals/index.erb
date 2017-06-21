@@ -3,8 +3,8 @@
 <hr>
 
 <% @deals.each do |deal| %>
-  <h3><a href="/deals/<%= deal.id() %>"><%= deal.title() %></a></h3>
-  <hr>
+<h3><a href="/deals/<%= deal.id() %>"><%= deal.title() %></a></h3>
+<hr>
 <% end %>
 
 <p><a href="/deals/new">Add a new deal</a></p>

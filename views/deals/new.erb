@@ -7,7 +7,7 @@
 
   <label for="deal-day">Day of Deal: </label>
   <select id="deal-day" name="day_id">
-  <% @days.each() do |day| %>
+    <% @days.each() do |day| %>
     <option value=<%= day.id() %>><%= day.day() %></option>
     <% end %>
   </select>
@@ -16,7 +16,7 @@
   <% @burgers.each do |burger| %>
   <input type="radio" name="burger_id" value=<%= burger.id %>><%= burger.name %>
   <% end %>
- 
+  
 
   <input type="submit" name="Create Deal">
 

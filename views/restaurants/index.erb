@@ -6,7 +6,7 @@
 
 <% @restaurants.each() do |restaurant| %>
 <h3><a href="/restaurants/<%=restaurant.id%>"><%= restaurant.name() %></a></h3>
-  <hr>
+<hr>
 <% end %>
 
 <p><a href="/restaurants/new">Create a new Restaurant!</a></p>
