@@ -1,8 +1,8 @@
 <h2>Daily Deals</h2>
 
 <section id="day-view">
-  <div id="section-title">
-  <p>Today is <%= @weekday.day() %></p>
+  <div id="section-title" >
+  <p id="what-day">Today is <%= @weekday.day() %></p>
   <% unless @weekday.deals() == [] %>
   <p>Here are your deals for today:</p>
   </div>

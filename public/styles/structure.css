@@ -180,6 +180,14 @@ input#deal-submit, input#restaurant-submit, input#burger-submit {
   border-radius: 30px;
 }
 
+p#what-day {
+  padding:1%;
+}
+
+section#day-view {
+  padding: .8%;
+}
+
 section#day-view li {
   padding:1.5% 0;
   border-top: dashed darkred;
