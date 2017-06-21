@@ -2,29 +2,29 @@
 
 <form method="post" action="/deals/">
 
-<p>
-  <label for="deal-title">New Deal Name: </label>
-  <input id="deal-title" type="text" name="title">
-</p>
-
   <p>
-  <label for="deal-day">Day of Deal: </label>
-  <select id="deal-day" name="day_id">
-    <% @days.each() do |day| %>
-    <option value=<%= day.id() %>><%= day.day() %></option>
-    <% end %>
-  </select>
-
-  <p>
-  <label for="burger-select">Burgers: </label>
-  <select id="burger-select" name="burger_id">
-    <% @burgers.each() do |burger| %>
-    <option value=<%= burger.id %>><%= burger.name() %></option>
-    <% end %>
-  </select>
+  <label for="deal-title">Deal Name: </label>
+    <input id="deal-title" type="text" name="title">
   </p>
 
   <p>
-  <input type="submit" name="Create Deal">
-  </p>
-</form>
+    <label for="day-select">Deal Day: </label>
+    <select id="day-select" name="day_id">
+      <% @days.each() do |day| %>
+      <option value=<%= day.id() %>><%= day.day() %></option>
+      <% end %>
+    </select>
+
+    <p>
+      <label for="burger-select">Burgers: </label>
+      <select id="burger-select" name="burger_id">
+        <% @burgers.each() do |burger| %>
+        <option value=<%= burger.id %>><%= burger.name() %></option>
+        <% end %>
+      </select>
+    </p>
+
+    <p>
+      <input id="deal-submit" type="submit" name="Create Deal">
+    </p>
+  </form>
