@@ -5,23 +5,27 @@
   <title>Burger Tracker</title>
 </head>
 <body>
-  <h1>Welcome to the Burger Tracker</h1>
-  <nav>
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/days/">Browse By Day</a></li>
-      <li><a href="/restaurants/">Browse By Restaurant</a></li>
-      <li><a href="/burgers/">Browse By Burger</a></li>
-      <li><a href="/deals/">Browse By Deal</a></li>     
-    </ul>
-  </nav>
+<div id="wrapper">
+    <h1>Welcome to the Burger Tracker</h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/days/">Browse By Day</a></li>
+        <li><a href="/restaurants/">Browse By Restaurant</a></li>
+        <li><a href="/burgers/">Browse By Burger</a></li>
+        <li><a href="/deals/">Browse By Deal</a></li>     
+      </ul>
+    </nav>
 
-  <%= yield %>
+    <%= yield %>
 
-  <ul>
-    <li><a href="/restaurants/new">Add a new restaurant here!</a></li>
-    <li><a href="/burgers/new">Got a restaurant? Add a burger here!</a></li>
-    <li><a href="/deals/new">Got a burger? Add a new deal here!</a></li>
-  </ul>
+    <footer>
+      <ul>
+        <li><a href="/restaurants/new">Add a new restaurant here!</a></li>
+        <li><a href="/burgers/new">Got a restaurant? Add a burger here!</a></li>
+        <li><a href="/deals/new">Got a burger? Add a new deal here!</a></li>
+      </ul>
+    </div>
+  </footer>
 </body>
 </html>
