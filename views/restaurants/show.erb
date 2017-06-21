@@ -1,24 +1,22 @@
-<h3><%= @restaurant.name %></h3>
-
+<h2><%= @restaurant.name %></h2>
+<section>
 <h4>Burgers</h4>
 <ul>
   <% @restaurant.burgers().each() do |burger| %>
-  <li><a href="../burgers/<%=burger.id%>"><%= burger.name() %></a></li>
+  <div id="rest-detail">
+    <li><a href="../burgers/<%=burger.id%>"><%= burger.name() %></a></li>
+  </div>
   <% end %>
 </ul>
 
 <h4>Deals</h4>
 <ul>
   <% @restaurant.deals().each() do |deal| %>
-  <li><a href="../deals/<%= deal.id %>"><%= deal.title() %></a><% deal.days().each do |day| %> - Available on <%= day.day() %><% end %></li>
-  
+  <div id="rest-detail">
+  <li><a href="../deals/<%= deal.id %>"><%= deal.title() %></a></li>
+  </div>
   <p></p>
 
-  <ul>
-    <% deal.burgers().each() do |burger| %>
-    <li><%= burger.name() %></li>
-    <% end %>
-  </ul>
-  <p></p>
   <% end %>
 </ul>
+</section>

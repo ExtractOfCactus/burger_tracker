@@ -5,22 +5,25 @@
   <title>Burger Tracker</title>
 </head>
 <body>
-  <div id="wrapper">
+  
+      
+      <div id="head-wrap">
       <div id="welcome-banner">
-        <h1>Welcome to the Burger Tracker</h1>
+        <h1>Burger Tracker</h1>
       </div>
       <nav>
         <ul>
           <li><a href="/">Home</a></li>
-          <li><a href="/days/">Browse By Day</a></li>
-          <li><a href="/restaurants/">Browse By Restaurant</a></li>
-          <li><a href="/burgers/">Browse By Burger</a></li>
-          <li><a href="/deals/">Browse By Deal</a></li>     
+          <li><a href="/days/">Days</a></li>
+          <li><a href="/restaurants/">Restaurants</a></li>
+          <li><a href="/burgers/">Burgers</a></li>
+          <li><a href="/deals/">Deals</a></li>     
         </ul>
       </nav>
-
+      </div>
+      <div id="wrapper">
       <%= yield %>
-     
+      </div> 
 
       <footer>
         <ul>
@@ -29,6 +32,6 @@
           <li><a href="/deals/new">Got a burger? Add a new deal here!</a></li>
         </ul>    
       </footer>
-  </div>    
+   
 </body>
 </html>

@@ -1,4 +1,5 @@
-<h3><%= @deal.title() %></h3>
+<h2><%= @deal.title() %></h2>
+<section>
 <p>Restaurant: <a href="../restaurants/<%=@deal.restaurant().id()%>"><%= @deal.restaurant().name() %></a></p>
 <% @deal.days().each() do |day| %>
 <p>Day of deal: <%= day.day() %></p>
@@ -10,4 +11,4 @@
   </ul>
   <% end %>
 </p>
-<hr>
+</section>

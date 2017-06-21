@@ -3,12 +3,12 @@
   <p><a href="/deals/new">Add a new deal</a></p>
 </div>
 
-<% @deals.each do |deal| %>
-<section>
-<h3><a href="/deals/<%= deal.id() %>"><%= deal.title() %></a></h3>
-</section>
-<% end %>
+  <% @deals.each do |deal| %>
+  <section>
+  <div id="details">
+    <h3><a href="/deals/<%= deal.id() %>"><%= deal.title() %></a></h3>
+  </div>
+  </section>
+  <% end %>
 
-<div class="create">
-  <p><a href="/deals/new">Add a new deal</a></p>
-</div>
+

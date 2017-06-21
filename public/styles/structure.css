@@ -3,7 +3,12 @@
   padding: 0;
 }
 
+html {
+  height: 100%;
+}
+
 body {
+  height: 100%;
   background-image: url(/images/burger_background.jpg);
   background-size: cover;
   background-attachment: fixed;
@@ -46,6 +51,7 @@ h2 {
   padding: 10px;
   text-align: center;
   clear: both;
+  border-bottom: black solid;
 }
 
 a, a:visited {
@@ -72,7 +78,7 @@ section {
   background: rgba(107, 65, 7, 0.5);
   margin: 1% 0 1% 25%;
   width: 50%;
-  border:dashed brown;
+  border: dashed brown;
   border-radius: 30px;
 }
 
@@ -91,8 +97,13 @@ section a:hover {
 
 footer {
   color: black;
+  height: 60px;
   background-image: url(/images/burger-buns-bottom.jpg);
   background-size: cover;
+  position: fixed;
+  bottom: 0;
+  width:100%;
+
 }
 
 footer ul li a:hover {
@@ -104,9 +115,24 @@ footer a:visited {
   color: black;
 }
 
+form {
+  background: rgba(107, 65, 7, 0.5);
+  margin: 1% 12% 1% 12%;
+
+  border: dashed brown;
+  border-radius: 30px;
+  padding:1%;
+}
+
 #wrapper {
   background-color: rgba(107, 65, 7, 0.5);
   color: white;
+  min-height: calc(100% - 35%);
+  margin-bottom: 10%;
+  padding-bottom: .8%;
+  /*min-height: calc(100% - 164px);*/
+  /*margin-bottom: 60px;*/
+  /*padding-bottom: 5px;*/
 }
 
 .create {
@@ -115,6 +141,7 @@ footer a:visited {
   border-radius:30px;
   width: 30%;
   margin-left: 35%;
+  margin-top: .8%;
 }
 .create a {
   display: block;
@@ -135,9 +162,26 @@ section#day-view li a {
   display: inline;
 }
 
-#day-deal li a {
+#details li a {
   padding: .8%;
 }
+
+h3#show-rest-name {
+  text-decoration: underline;
+}
+#head-wrap {
+  height: 25%;
+}
+/*#head-wrap {
+  height: 99px;
+}*/
+
+#section-title, p#no-deal {
+  padding-bottom: .8%;
+}
+
+ 
+
 /*
 #welcome-banner {
   background-color: rgba(186, 154, 13, 0);
