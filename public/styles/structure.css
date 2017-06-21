@@ -46,16 +46,18 @@ h2 {
   clear: both;
 }
 
-a {
+a, a:visited {
   text-decoration: none;
   color: black;
 }
 
-a:visited {
-  color: black;
+a:hover {
+  background: white;
+  border: solid, white;
+  border-radius: 4px;
 }
 
-a:hover {
+nav a:hover {
   color: slategray;
   background-color: limegreen;
 }
@@ -63,6 +65,19 @@ a:hover {
 nav li a {
   display: block;
   padding: 10px 0 10px 0
+}
+
+li {
+  list-style-type: none;
+}
+
+section {
+  background: white;
+  margin-left: 25%;
+  width: 50%;
+  height: 50%;
+  border:dashed brown;
+  border-radius: 6px;
 }
 
 footer {
@@ -73,3 +88,7 @@ footer {
 #wrapper {
   background-color: rgba(107, 65, 7, 0.5);
 }
+
+/*#welcome-banner {
+  background-color: rgba(186, 154, 13, 0);
+}*/
