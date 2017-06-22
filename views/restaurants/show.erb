@@ -1,6 +1,6 @@
 <h2><%= @restaurant.name %></h2>
 <section>
-<h4>Burgers</h4>
+<h4><u>Burgers</u></h4>
 <ul>
   <% @restaurant.burgers().each() do |burger| %>
   <div id="rest-detail">
@@ -9,7 +9,7 @@
   <% end %>
 </ul>
 
-<h4>Deals</h4>
+<h4><u>Deals</u></h4>
 <ul>
   <% @restaurant.deals().each() do |deal| %>
   <div id="rest-detail">

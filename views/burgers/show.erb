@@ -1,7 +1,7 @@
   <h2><%= @burger.name() %></h2>
   <section>
-  <p>Restaurant: <a href="../restaurants/<%= @burger.restaurant().id() %>"><%= @burger.restaurant().name()%></a></p>
-  <p>Deals: </p>
+  <p><u>Restaurant</u> <a href="../restaurants/<%= @burger.restaurant().id() %>"><%= @burger.restaurant().name()%></a></p>
+  <p><u>Deals</u> </p>
   <ul>
     <% @burger.deals().each do |deal| %>
     <li><a href="../deals/<%= deal.id() %>"><%= deal.title() %></a><% deal.days().each do |day| %> - Available on <%= day.day() %><% end %></li>

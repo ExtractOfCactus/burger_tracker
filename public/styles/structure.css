@@ -153,13 +153,9 @@ input#deal-submit, input#restaurant-submit, input#burger-submit {
 #wrapper {
   background-color: rgba(107, 65, 7, 0.5);
   color: white;
-  height: 100%;
-  /*min-height: calc(100% - 35%);*/
-  /*margin-bottom: 5%;*/
-  /*padding-bottom: .8%;*/
   min-height: calc(100% - 164px);
-  margin-bottom: 60px;
-  padding-bottom: 5px;
+  margin-bottom: 10px;
+  padding-bottom:60px;
 }
 
 .create {
@@ -205,9 +201,6 @@ h3#show-rest-name {
   text-decoration: underline;
 }
 
-/*#head-wrap {
-  height: 20%;
-}*/
 #head-wrap {
   height: 99px;
 }
@@ -215,10 +208,3 @@ h3#show-rest-name {
 #section-title, p#no-deal {
   padding-bottom: .8%;
 }
-
- 
-
-/*
-#welcome-banner {
-  background-color: rgba(186, 154, 13, 0);
-}*/
