@@ -52,30 +52,35 @@ class Deal
     return result
   end
 
+  def edit()
+    sql = "UPDATE deals SET (
+      title,
+      day_id
+      ) = (
+      '#{@title}',
+      #{@day_id}
+      ) WHERE id = #{@id}"
+    SqlRunner.run(sql)
+  end
+
 
   def Deal.all()
     sql = "SELECT * FROM deals"
-    deal_hashes = SqlRunner.run(sql)
-    result = deal_hashes.map {|deal_hash| Deal.new(deal_hash)}
-    return result
+    Deal.new_deals_array(sql)
   end
 
   def Deal.find(id)
     sql = "SELECT * FROM deals WHERE id = #{id}"
-    deal_hashes = SqlRunner.run(sql)
-    result = deal_hashes.map {|deal_hash| Deal.new(deal_hash)}
-    return result.first()
+    Deal.new_deals_array(sql).first()
   end
 
   def Deal.delete_all()
     sql = 'DELETE FROM deals'
-    deal_hashes = SqlRunner.run(sql)
-    result = deal_hashes.map {|deal_hash| Deal.new(deal_hash)}
-    return result
+    SqlRunner.run(sql)
   end
 
 
-  def sql_runner(sql)
+  def Deal.new_deals_array(sql)
     deal_hashes = SqlRunner.run(sql)
     result = deal_hashes.map {|deal_hash| Deal.new(deal_hash)}
     return result

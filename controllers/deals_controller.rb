@@ -12,18 +12,21 @@ get '/deals/' do
   erb(:"deals/index")
 end
 
+#NEW
 get '/deals/new' do
   @days = Day.all()
   @burgers = Burger.all()
   erb(:"deals/new")
 end
 
+#SHOW
 get '/deals/:id' do
   @deal = Deal.find(params['id'].to_i)
   erb(:"deals/show")
 end
 
-post'/deals/' do
+#CREATE
+post '/deals/' do
   deal = Deal.new(params)
   deal.save()
   params['deal_id'] = deal.id
@@ -31,3 +34,23 @@ post'/deals/' do
   burger_deal.save()  
   redirect to('/burgers/')
 end
+
+#EDIT
+get '/deals/:id/edit' do
+  @deal = Deal.find(params["id"].to_i)
+  @days = Day.all()
+  @burgers = Burger.all()
+  erb(:"deals/edit")
+end
+
+#UPDATE
+post '/deals/:id' do
+  deal = Deal.new(params)
+  deal.save()
+  params['deal_id'] = deal.id
+  burger_deal = BurgerDeal.new(params)
+  burger_deal.save() 
+  redirect to('/deals/#{params["id"]}')
+end
+
+

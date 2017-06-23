@@ -141,8 +141,8 @@ select#burger-select {
 }
 
 input#deal-title {
-  width: 40%;
-  margin-left: 10%;
+  width: 38%;
+  margin-left: 15%;
 }
 
 input#deal-submit, input#restaurant-submit, input#burger-submit {
