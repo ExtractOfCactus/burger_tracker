@@ -20,9 +20,15 @@ class BurgerDeal
     result = SqlRunner.run(sql)
     @id = result.first()["id"].to_i
   end
+  
 
   def BurgerDeal.delete_all()
     sql = "DELETE FROM burger_deals"
+    SqlRunner.run(sql)
+  end
+
+  def BurgerDeal.delete(id)
+    sql = "DELETE FROM burger_deals WHERE deal_id = #{id}"
     SqlRunner.run(sql)
   end
 

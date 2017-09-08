@@ -7,6 +7,7 @@ require_relative('../models/deal')
 require_relative('../models/day')
 require_relative('../models/burger_deal')
 
+
 get '/deals/' do
   @deals = Deal.all()
   erb(:"deals/index")
@@ -46,11 +47,22 @@ end
 #UPDATE
 post '/deals/:id' do
   deal = Deal.new(params)
-  deal.save()
+  deal.update()
   params['deal_id'] = deal.id
   burger_deal = BurgerDeal.new(params)
-  burger_deal.save() 
+  burger_deal.update() 
   redirect to('/deals/#{params["id"]}')
 end
 
+get '/deals/:id/confirm' do
+  @deal = Deal.find(params['id'].to_i)
+  erb(:"deals/delete")
+end
+
+# DELETE
+post '/deals/:id/delete' do
+  BurgerDeal.delete(params['id'].to_i)
+  Deal.delete(params['id'].to_i)
+  redirect to('/deals/')
+end
 

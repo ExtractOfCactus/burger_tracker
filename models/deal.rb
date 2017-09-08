@@ -2,6 +2,7 @@ require_relative('../db/sql_runner')
 require_relative('restaurant')
 require('pry-byebug')
 
+
 class Deal
   attr_reader :id, :title, :day_id
 
@@ -63,7 +64,6 @@ class Deal
     SqlRunner.run(sql)
   end
 
-
   def Deal.all()
     sql = "SELECT * FROM deals"
     Deal.new_deals_array(sql)
@@ -77,6 +77,11 @@ class Deal
   def Deal.delete_all()
     sql = 'DELETE FROM deals'
     SqlRunner.run(sql)
+  end
+
+  def Deal.delete(id)
+    sql2 = "DELETE FROM deals WHERE id = #{id}"
+    SqlRunner.run(sql2)
   end
 
 

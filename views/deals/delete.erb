@@ -1,0 +1,4 @@
+<p>Are you sure you want to delete <%= @deal.title() %>?</p>
+<form method="POST" action="/deals/<%= @deal.id() %>/delete">
+  <input type="submit" name="Yes, delete it">
+</form>
