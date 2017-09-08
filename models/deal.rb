@@ -80,8 +80,8 @@ class Deal
   end
 
   def Deal.delete(id)
-    sql2 = "DELETE FROM deals WHERE id = #{id}"
-    SqlRunner.run(sql2)
+    sql = "DELETE FROM deals WHERE id = #{id}"
+    SqlRunner.run(sql)
   end
 
 
