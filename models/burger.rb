@@ -62,6 +62,11 @@ class Burger
     new_burgers_array(sql).first()
   end
 
+  def Burger.delete(id)
+    sql = "DELETE FROM burgers WHERE id = #{id}"
+    SqlRunner.run(sql)
+  end
+
   def Burger.delete_all()
     sql = "DELETE FROM burgers"
     SqlRunner.run(sql)

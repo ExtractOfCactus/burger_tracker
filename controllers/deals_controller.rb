@@ -61,7 +61,7 @@ end
 
 # DELETE
 post '/deals/:id/delete' do
-  BurgerDeal.delete(params['id'].to_i)
+  BurgerDeal.delete(params['id'].to_i, 'deal')
   Deal.delete(params['id'].to_i)
   redirect to('/deals/')
 end

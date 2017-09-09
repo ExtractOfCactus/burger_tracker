@@ -1,4 +1,5 @@
 require_relative('../models/burger')
+require_relative('../models/burger_deal')
 
 
 get '/burgers/' do
@@ -34,3 +35,13 @@ post '/burgers/:id' do
   redirect to('/burgers/')
 end
 
+get '/burgers/:id/confirm' do
+  @burger = Burger.find(params['id'].to_i)
+  erb(:"burgers/delete")
+end
+
+post '/burgers/:id/delete' do
+  BurgerDeal.delete(params['id'].to_i, 'burger')
+  Burger.delete(params['id'].to_i)
+  redirect to ('/burgers/')
+end

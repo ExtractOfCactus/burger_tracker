@@ -7,5 +7,7 @@
     <li><a href="../deals/<%= deal.id() %>"><%= deal.title() %></a><% deal.days().each do |day| %> - Available on <%= day.day() %><% end %></li>
     <% end %>
   </ul>
+
+  <p><a href="/burgers/<%= @burger.id() %>/confirm">Delete this burger</a>
   </section>
   

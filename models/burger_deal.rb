@@ -27,8 +27,8 @@ class BurgerDeal
     SqlRunner.run(sql)
   end
 
-  def BurgerDeal.delete(id)
-    sql = "DELETE FROM burger_deals WHERE deal_id = #{id}"
+  def BurgerDeal.delete(id, type)
+    sql = "DELETE FROM burger_deals WHERE #{type}_id = #{id}"
     SqlRunner.run(sql)
   end
 
