@@ -1,3 +1,5 @@
+require ('pry-byebug')
+
 class Day
   attr_reader :id, :day
 

@@ -9,7 +9,9 @@
   <ul>
     <% @weekday.deals().each() do |deal| %>
     <div id="details">
-      <li><a href="deals/<%=deal.id%>"><%= deal.title() %></a> at <a href="restaurants/<%=deal.restaurant().id()%>"><%= deal.restaurant().name() %></a></li>
+      <% unless deal.restaurant() == nil %>
+        <li><a href="deals/<%=deal.id%>"><%= deal.title() %></a> at <a href="restaurants/<%=deal.restaurant().id()%>"><%= deal.restaurant().name() %></a></li>
+      <% end %>
     </div>
     <% end %>
   </ul>

@@ -128,14 +128,15 @@ label {
   display: block;
   float: left;
   margin-left: 5%;
+  /*text-align: right;*/
 }
 
-select#day-select {
+#day-select {
   width: 40%;
   margin-left: 16%;
 }
 
-select#burger-select {
+#burger-select {
   width: 40%;
   margin-left: 18%;
 }

@@ -1,16 +1,18 @@
 <h2><%= @deal.title() %></h2>
 <section>
-<p><u>Restaurant</u> <a href="../restaurants/<%=@deal.restaurant().id()%>"><%= @deal.restaurant().name() %></a></p>
-<% @deal.days().each() do |day| %>
-<p><u>Day of deal</u></p> <p><%= day.day() %></p>
-<p><u>Applicable to</u>
-  <ul>
-    <% @deal.burgers().each() do |burger| %>
-    <li><a href="../burgers/<%=burger.id()%>"><%= burger.name() %></a></li>
+<% unless @deal.restaurant() == nil %>
+  <p><u>Restaurant</u> <a href="../restaurants/<%=@deal.restaurant().id()%>"><%= @deal.restaurant().name() %></a></p>
+  <% @deal.days().each() do |day| %>
+  <p><u>Day of deal</u></p> <p><%= day.day() %></p>
+  <p><u>Applicable to</u>
+    <ul>
+      <% @deal.burgers().each() do |burger| %>
+      <li><a href="../burgers/<%=burger.id()%>"><%= burger.name() %></a></li>
+      <% end %>
+    </ul>
     <% end %>
-  </ul>
-  <% end %>
-</p>
-<p><a href="/deals/<%= @deal.id() %>/edit">Edit this deal</a></p>
-<p><a href="/deals/<%= @deal.id() %>/confirm">Delete this deal</a></p>
+  </p>
+  <p><a href="/deals/<%= @deal.id() %>/edit">Edit this deal</a></p>
+  <p><a href="/deals/<%= @deal.id() %>/confirm">Delete this deal</a></p>
+<% end %>
 </section>

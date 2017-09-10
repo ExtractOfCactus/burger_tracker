@@ -49,8 +49,12 @@ class Deal
       ON burgers.id = burger_deals.burger_id
       WHERE burger_deals.deal_id = #{@id}"
     restaurant_hash = SqlRunner.run(sql).first()
-    result = Restaurant.new(restaurant_hash)
-    return result
+    unless restaurant_hash == nil then
+      result = Restaurant.new(restaurant_hash)
+      return result
+    else 
+      return nil
+    end
   end
 
   def edit()
